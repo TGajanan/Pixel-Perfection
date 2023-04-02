@@ -1,0 +1,20 @@
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   name: imageai
+ spec:
+   replicas: 5
+   selector:
+     matchLabels:
+       app: imageai
+   template:
+     metadata:
+       labels:
+         app: imageai
+     spec:
+       containers:
+       - name: imageai
+         image: us.icr.io/myimage_ai/perfectimage 
+         imagePullPolicy: Always
+         ports:
+         - containerPort: 5000

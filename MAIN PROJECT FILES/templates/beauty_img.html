@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Pixel Perfection: Transforming your photos with our cutting-edge image editing platform</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="static/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="static/assets/css/templatemo-574-mexant.css">
+    <link rel="stylesheet" href="static/assets/css/owl.css">
+    <link rel="stylesheet" href="static/assets/css/animate.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+<!--
+
+TemplateMo 574 Mexant
+
+https://templatemo.com/tm-574-mexant
+
+-->
+  </head>
+
+<body>
+
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <!-- <a href="index.html" class="logo">
+                          <img src="static/assets/images/logo.png" alt="">
+                      </a> -->
+                      <!-- ***** Logo End ***** -->
+
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li class="scroll-to-section"><a href='/', class="active">Home</a></li>
+                          {% if user == 'Loggedin' %}
+                          <li class="scroll-to-section"><a href="/beauty_images">My_Images</a></li>
+                          {% endif %}
+                          <li class="scroll-to-section"><a href="#about">About</a></li>
+                          <li class="has-sub">
+                              <a href="javascript:void(0)">IMAGE AI</a>
+                              <ul class="sub-menu">
+                                <li><a href="/removebg">Remove_background</a></li>
+                                <li><a href="/vehicleremove">Vehicle_background</a></li>
+                                <li><a href="/cartoon_img">Cartoon_yourself</a></li>
+                                <li><a href="/beauty_img">AI_Skin_Beauty</a></li>
+                                <!-- <li><a href="/motion_img">Image_Micro_Motion</a></li> -->
+                                <!-- <li><a href="/3dcartoon_img">3d_cartoon_image</a></li> -->
+                                <!-- <li><a href="#contact-us.html">Detect_Skin_Disease</a></li> -->
+                              </ul>
+                          </li>
+                          <!-- <li class="scroll-to-section"><a href="#testimonials">Testimonials</a></li> -->
+                          <!-- <li><a href="#login">Login</a></li>  -->
+                          {% if user == 'Loggedin' %}
+                          <li><a href="/logout">logout</a></li> 
+                          {% else %}
+                          <li><a href="/login">login</a></li> 
+                          {% endif %}
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+
+  <!-- ***** Header Area End ***** -->
+
+  <section class="main-services">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="service-item">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="left-image">
+                  <img src="{{image_o}}" alt="img after bg remove"><br><br>
+                  <!-- <img src="{{image_b64}}" alt="your image "> -->
+                </div>
+              </div>
+              <div class="col-lg-6 align-self-center">
+                <div class="right-text-content">
+                  <i class="fa fa-upload"></i>
+                  <h4>Upload Image</h4>
+                  <form action="/beauty_img" method="POST" enctype="multipart/form-data">
+                    <input type="file" id="myFile" name="filename"><br><br>
+                    <!-- <label for="lname">Last name:</label><br> -->
+                    <p>Retouch_degree:-<input type="number" id="number" name="number"  min="0" max="1.5" step="0.1"></p><br><br>
+                    <p>Whitening_degree:-<input type="number" id="number" name="number1"  min="0" max="1.5" step="0.1"></p><br><br>
+
+               
+                    <input type="submit">
+                  </form><br>
+                  <!-- <p>NOTE:- <br> 
+                      mask: Returns a single channel mask.<br>
+                      whiteBK: Return to white background image.</p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-lg-12">
+          <div class="service-item">
+            <div class="row">
+              <div class="col-lg-6 align-self-center">
+                <div class="left-text-content">
+                  <i class="fas fa-archive"></i>
+                  <h4>Financial Solutions</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et ex massa. In ac laoreet urna. Curabitur eu enim nibh. Phasellus sodales nisi vel leo aliquam, ut tempus augue hendrerit. Pellentesque eu risus tincidunt, condimentum eros in, auctor augue. Vivamus et urna blandit, varius sapien sed.</p>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="right-image">
+                  <img src="static/assets/images/service-image-02.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="service-item last-service">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="left-image">
+                  <img src="static/assets/images/service-image-03.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-lg-6 align-self-center">
+                <div class="right-text-content">
+                  <i class="fas fa-archive"></i>
+                  <h4>Cryptocurrency Exchanges</h4>
+                  <p>Mauris id efficitur ante, vitae ultrices metus. Donec et nunc massa. Nullam non felis dignissim, dapibus turpis semper, vulputate lorem. Nam volutpat posuere tellus, in porttitor justo interdum nec. Aenean in dapibus risus, in euismod ligula. Aliquam vel scelerisque elit.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="simple-cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5">
+          <h4>Business <em>Solutions</em> and <strong>Image</strong> Generation</h4>
+        </div>
+        <div class="col-lg-7">
+          <div class="buttons">
+            <div class="green-button">
+              <a href="#">Discover More</a>
+            </div>
+            <div class="orange-button">
+              <a href="#">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- 
+{% if user == 'login' %}
+  <section class="service-details">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading">
+            <h6>AI Generated Images</h6>
+            <h4>Your Previous Images</h4>
+          </div>
+        </div>
+        <div class="col-lg-10 offset-lg-1">
+          <div class="naccs">
+            <div class="tabs">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="menu">
+                    <div class="gradient-border"><a href="/beauty_images"><span>Beauty Images</span></a></div>
+                    <div class="gradient-border"><span>cartnoon Images</span></div>
+                    <div class="gradient-border"><span>AI Skin beauty</span></div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        {%- for row in rows %}
+                        <div class="row">
+                          <div class="col-md-3 col-sm-6">
+                            <div class="event">
+                              <div class="slide-content"></div>
+                              <a href="" download="beauty.jpg">
+                              <img src="{{row['SKIN_BEAUTY']}}" alt="" class="event-image"><button style="align-content: center;"><i class="fa-solid fa-download"></i></button></a>
+                            </div>
+                          </div>
+                        </div>
+                        {%- endfor %}
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="left-image">
+                          <img src="static/assets/images/service-details-02.jpg" alt="">
+                        </div>
+                        <div class="right-content">
+                          <h4>Read more on Cryptocurrency Market</h4>
+                          <p>Fusce fringilla nisl nunc, nec rutrum lectus cursus nec. In blandit nibh dolor, at rutrum leo accumsan porta. Nullam pulvinar eros porttitor risus condimentum tempus.</p>
+                          <span>- Digital Currency Exchange</span>
+                          <span>- Trading Cryptocurrencies Online</span>
+                          <span class="last-span">- Different Categories of Digital Currencies</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="left-image">
+                          <img src="static/assets/images/service-details-03.jpg" alt="">
+                        </div>
+                        <div class="right-content">
+                          <h4>How to carefully plan on your online financials</h4>
+                          <p>Pellentesque ipsum elit, congue a sapien laoreet, pellentesque ultricies risus. Nulla facilisi. Mauris vitae lacinia magna. Nam euismod sapien sit amet elementum blandit. Nulla non placerat neque.</p>
+                          <span>- Financial Planning and Investments</span>
+                          <span>- Business Networking</span>
+                          <span class="last-span">- Managing Digital Assets</span>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}   -->
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="static/assets/js/isotope.min.js"></script>
+    <script src="static/assets/js/owl-carousel.js"></script>
+
+    <script src="static/assets/js/tabs.js"></script>
+    <script src="static/assets/js/swiper.js"></script>
+    <script src="static/assets/js/custom.js"></script>
+    <script>
+        var interleaveOffset = 0.5;
+
+      var swiperOptions = {
+        loop: true,
+        speed: 1000,
+        grabCursor: true,
+        watchSlidesProgress: true,
+        mousewheelControl: true,
+        keyboardControl: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev"
+        },
+        on: {
+          progress: function() {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+              var slideProgress = swiper.slides[i].progress;
+              var innerOffset = swiper.width * interleaveOffset;
+              var innerTranslate = slideProgress * innerOffset;
+              swiper.slides[i].querySelector(".slide-inner").style.transform =
+                "translate3d(" + innerTranslate + "px, 0, 0)";
+            }      
+          },
+          touchStart: function() {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+              swiper.slides[i].style.transition = "";
+            }
+          },
+          setTransition: function(speed) {
+            var swiper = this;
+            for (var i = 0; i < swiper.slides.length; i++) {
+              swiper.slides[i].style.transition = speed + "ms";
+              swiper.slides[i].querySelector(".slide-inner").style.transition =
+                speed + "ms";
+            }
+          }
+        }
+      };
+
+      var swiper = new Swiper(".swiper-container", swiperOptions);
+    </script>
+  </body>
+</html>
